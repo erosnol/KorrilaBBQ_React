@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { receipt1, receipt2, receipt3 } from "./data/ReceiptData";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Component } from 'react';
+import Receipt from './components/Receipt'
+
+class App extends Component {
+
+  state = {
+   receipt1: receipt1,
+   receipt2: receipt2,
+   receipt3: receipt3
+  }
+
+
+  
+
+    render(){
+      console.log(receipt1);
+      return (
+        <div>
+        <h1>Korilla BBQ</h1>
+
+        <div className='container'>
+          <Receipt receipt={this.state.receipt1} />
+          <Receipt receipt={this.state.receipt2} />
+          <Receipt receipt={this.state.receipt3} />
+        </div>
+        </div>
+      );
+    }
 }
 
 export default App;
