@@ -22,9 +22,9 @@ class App extends Component {
         <h1>Korilla BBQ</h1>
 
         <div className='container'>
-          <Receipt receipt={this.state.receipt1} />
-          <Receipt receipt={this.state.receipt2} />
-          <Receipt receipt={this.state.receipt3} />
+          { this.state.receipt1.paid ? null : <Receipt receipt={this.state.receipt1} />}
+          { this.state.receipt2.paid ? null : <Receipt receipt={this.state.receipt2} />}
+          { this.state.receipt3.paid ? null : <Receipt receipt={this.state.receipt3} />}
         </div>
         </div>
       );
